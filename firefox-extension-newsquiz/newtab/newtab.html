@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily News Quiz</title>
+  <link rel="stylesheet" href="newtab.css" />
+</head>
+<body>
+
+  <div id="screen-loading" class="screen">
+    <div class="loading-box">
+      <div class="spinner-lg"></div>
+      <p id="loading-text" class="loading-text">Fetching today's news quiz…</p>
+    </div>
+  </div>
+
+  <div id="screen-no-key" class="screen hidden">
+    <div class="center-card">
+      <div class="card-icon">🔑</div>
+      <h2>API Key Required</h2>
+      <p class="hint">Set your Google AI Studio API key via the toolbar extension icon to generate quizzes.</p>
+    </div>
+  </div>
+
+  <div id="screen-error" class="screen hidden">
+    <div class="center-card">
+      <div class="card-icon">⚠️</div>
+      <h2>Something went wrong</h2>
+      <p id="error-message" class="hint"></p>
+      <button id="btn-retry" class="btn-primary">Try Again</button>
+    </div>
+  </div>
+
+  <div id="screen-quiz" class="screen hidden">
+    <header class="quiz-header">
+      <span class="logo">✦ Daily News Quiz</span>
+      <div class="header-right">
+        <span id="score-display" class="score-badge">0 / 0</span>
+        <button id="btn-refresh" class="icon-btn" title="Refresh quiz">↺</button>
+      </div>
+    </header>
+
+    <main class="quiz-main">
+      <div class="progress-wrap">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      <p id="question-counter" class="question-counter">Question 1 of 10</p>
+
+      <div id="question-card" class="question-card">
+        <p id="question-text" class="question-text"></p>
+        <div id="options-list" class="options-list"></div>
+
+        <div id="feedback" class="feedback hidden">
+          <p id="feedback-text" class="feedback-text"></p>
+          <p id="explanation-text" class="explanation-text"></p>
+          <a id="source-link" class="source-link" href="#" target="_blank" rel="noopener">Read source ↗</a>
+          <button id="btn-next" class="btn-primary btn-next">Next →</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="screen-results" class="screen hidden">
+    <div class="center-card results-card">
+      <div id="result-emoji" class="card-icon result-emoji"></div>
+      <h2>Quiz Complete!</h2>
+      <p id="final-score" class="final-score"></p>
+      <p id="result-message" class="hint result-msg"></p>
+      <div class="results-actions">
+        <button id="btn-new-quiz" class="btn-primary">New Quiz</button>
+        <button id="btn-review" class="btn-secondary">Review Answers</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="screen-review" class="screen hidden">
+    <header class="quiz-header">
+      <button id="btn-back" class="icon-btn" title="Back">← Back</button>
+      <span class="logo">Review</span>
+      <span></span>
+    </header>
+    <div id="review-list" class="review-list"></div>
+  </div>
+
+  <script src="../api/gemini.js"></script>
+  <script src="../api/news.js"></script>
+  <script src="../api/quiz.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>
