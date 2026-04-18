@@ -73,7 +73,7 @@ Check storage.local cache
 
 ### Prerequisites
 - Firefox (any recent version)
-- A [Google AI Studio](https://aistudio.google.com/app/apikey) API key (free tier works)
+- A [Google AI Studio](https://ai.google.dev/gemini-api/docs/quickstart) API key (free tier works)
 
 ### Load the Extension
 
@@ -138,9 +138,3 @@ The `icons/` directory contains placeholder PNGs. Replace `icon16.png`, `icon48.
 - **Cold load latency** — first quiz generation takes ~10–20s depending on Gemini response time
 - **RSS snippet quality** — Google News snippets are short; Gemini generates questions from limited context, so occasionally a question may feel thin
 - **Rate limits** — if you refresh very frequently, you may hit Google AI Studio's free-tier rate limits
-
----
-
-## Changelog
-
-See [CHANGELOG.md](./CHANGELOG.md) for a full history of changes.
