@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "Daily News Quiz",
+  "version": "1.0.0",
+  "description": "Every new tab gives you 10 MCQs about the latest news, powered by Gemini.",
+
+  "permissions": [
+    "storage",
+    "alarms",
+    "https://generativelanguage.googleapis.com/*",
+    "https://news.google.com/*"
+  ],
+
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Daily News Quiz — Settings",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "96": "icons/icon96.png"
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "96": "icons/icon96.png"
+  },
+
+  "chrome_url_overrides": {
+    "newtab": "newtab/newtab.html"
+  },
+
+  "background": {
+    "scripts": ["api/gemini.js", "api/news.js", "api/quiz.js", "background/background.js"],
+    "persistent": true
+  }
+}
